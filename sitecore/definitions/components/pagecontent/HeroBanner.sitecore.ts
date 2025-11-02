@@ -13,8 +13,8 @@ export default function HeroBanner (manifest: Manifest): void {
     // totally optional, but fun
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: 'title', type: CommonFieldTypes.SingleLineText },
-      { name: 'subtitle', type: CommonFieldTypes.RichText },
+      { name: 'heading', type: CommonFieldTypes.SingleLineText },
+      { name: 'content', type: CommonFieldTypes.RichText },
     ],
   });
 }

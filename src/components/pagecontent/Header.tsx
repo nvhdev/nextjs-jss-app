@@ -15,11 +15,29 @@ type HeaderProps = ComponentProps & {
  * JSS component that's useful.
  */
 const Header = ({ fields }: HeaderProps): JSX.Element => (
-  <div className="contentBlock">
-    <Text tag="h2" className="contentTitle" field={fields.heading} />
+  <header className="contentBlock">
+    <div className="site-branding">
+      <a href="/" className="logo">
+        <img src="/images/logo.svg" alt="SiteB Logo" />
+      </a>
+      <h1 className="site-title">SiteB</h1>
+    </div>
 
-    <RichText className="contentDescription" field={fields.content} />
-  </div>
+    <nav className="main-navigation" aria-label="Main menu">
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div className="header-actions">
+      <form action="/search" method="get" className="search-form">
+        <input type="text" name="q" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </header>
 );
 
 export default withDatasourceCheck()<HeaderProps>(Header);

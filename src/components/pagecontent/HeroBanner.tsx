@@ -15,11 +15,16 @@ type HeroBannerProps = ComponentProps & {
  * JSS component that's useful.
  */
 const HeroBanner = ({ fields }: HeroBannerProps): JSX.Element => (
-  <div className="contentBlock">
-    <Text tag="h2" className="contentTitle" field={fields.heading} />
-
-    <RichText className="contentDescription" field={fields.content} />
-  </div>
+  <section className="hero-banner">
+    <div className="hero-content">
+      <h1>Welcome to SiteB</h1>
+      <p>Your trusted partner for digital innovation.</p>
+      <a href="/services" className="cta-button">Explore Services</a>
+    </div>
+    <div className="hero-image">
+      <img src="/images/hero-siteb.jpg" alt="Digital innovation visual" />
+    </div>
+  </section>
 );
 
 export default withDatasourceCheck()<HeroBannerProps>(HeroBanner);

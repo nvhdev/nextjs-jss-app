@@ -15,11 +15,36 @@ type FooterProps = ComponentProps & {
  * JSS component that's useful.
  */
 const Footer = ({ fields }: FooterProps): JSX.Element => (
-  <div className="contentBlock">
-    <Text tag="h2" className="contentTitle" field={fields.heading} />
+  <footer>
+    <div className="footer-content">
+      <div className="footer-logo">
+        <a href="/">
+          <img src="/images/logo-footer.svg" alt="SiteB Logo" />
+        </a>
+      </div>
 
-    <RichText className="contentDescription" field={fields.content} />
-  </div>
+      <nav className="footer-navigation" aria-label="Footer menu">
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div className="footer-social">
+        <a href="https://twitter.com/siteb" aria-label="Twitter">
+          <img src="/images/icon-twitter.svg" alt="Twitter" />
+        </a>
+        <a href="https://linkedin.com/company/siteb" aria-label="LinkedIn">
+          <img src="/images/icon-linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+
+    <div className="footer-bottom">
+      <p>&copy; 2025 SiteB. All rights reserved.</p>
+    </div>
+  </footer>
 );
 
 export default withDatasourceCheck()<FooterProps>(Footer);

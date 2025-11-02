@@ -10,6 +10,7 @@ export default function addPlaceholdersToManifest(manifest: Manifest): void {
   manifest.addPlaceholder(
     { name: 'headless-header', displayName: 'header' },
     { name: 'headless-footer', displayName: 'footer' },
-    { name: 'headless-main', displayName: 'main' }
+    { name: 'headless-main', displayName: 'main' },
+    { name: 'main-content', displayName: 'main-content' }
   );
 }
